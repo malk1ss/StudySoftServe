@@ -15,3 +15,4 @@ end
 
 puts stray([1, 1, 2, 3, 3, 5,2])
 
+#test gitHub
