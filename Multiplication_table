@@ -1,0 +1,10 @@
+# Your task, is to create NxN multiplication table, of size provided in parameter.
+
+# for example, when given size is 3:
+#     for given example, the return value should be: [[1,2,3],[2,4,6],[3,6,9]]
+
+def self.multiplication_table(n)
+    (1..n).map { |element| Array.new(n) { |i| (i + 1) * element } }
+  end
+
+  puts tabuada(4)
