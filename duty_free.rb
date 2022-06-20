@@ -20,3 +20,5 @@ end
 
 puts duty_free(12, 50, 1000)
 puts duty_free(17, 10, 500)
+
+
