@@ -1,0 +1,60 @@
+#IO
+
+file = File.new("testfile", "r")
+# ... process the file
+file.close
+
+
+File.open("testfile", "r") do |file|
+    # ... process the file
+    end
+    # <- file automatically closed here
+
+
+    class File
+        def File.open(*args)
+            result = f = File.new(*args)
+            if block_given?
+                begin
+                  result = yield f
+                ensure
+                  f.close
+                end
+            end
+            result
+          end
+        end
+
+
+        tut_io/copy.rb
+        while line = gets
+            puts line
+        end
+
+
+
+        File.open("testfile") do |file|
+            while line = file.gets
+              puts line
+            end
+        end
+
+
+
+        File.open("testfile") do |file|
+            file.each_byte.with_index do |ch, index|
+                print "#{ch.chr}:#{ch} "
+                break if index > 10
+            end
+        end
+
+
+
+        File.open("testfile") do |file|
+            file.each_line {|line| puts "Got #{line.dump}" }
+        end
+
+
+        File.open("testfile") do |file|
+            file.each_line("e") {|line| puts "Got #{ line.dump }" }
+        end
