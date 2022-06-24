@@ -19,4 +19,4 @@ end
 lcm(0)
 lcm(1, 2, 3)
 lcm()
-# puts a = [2, 3, 4].reduce(1, :lcm)
+
