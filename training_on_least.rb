@@ -18,5 +18,4 @@ end
 
 lcm(0)
 lcm(1, 2, 3)
-lcm()
-
+lcm()#
